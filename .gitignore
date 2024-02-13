@@ -1,0 +1,7 @@
+.venv
+dataset
+data
+misc
+.DS_Store
+.keras
+__pycache__
