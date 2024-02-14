@@ -15,4 +15,4 @@ P(B) = 1 – P(Not B) = 1 - 0.736806 = 0.263194
 ```
 # Task 2
 
-[Model Building Documentation](IDClassification.ipynb)
+You can find [Model Building Documentation here](IDClassification.ipynb) 

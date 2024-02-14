@@ -22,7 +22,7 @@ with open('model/class_names.csv', newline='') as csvfile:
 def classify_image(img_path):
 
     image = cv2.imread(img_path)
-    image = cv2.resize(image, (128, 128))
+    image = cv2.resize(image, (64, 64))
     image = image.astype("float") / 255.0
     image = img_to_array(image)
     image = np.expand_dims(image, axis=0)

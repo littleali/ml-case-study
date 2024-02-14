@@ -5,4 +5,5 @@ opencv-python==4.9.0.80
 tensorflow==2.14.1
 numpy==1.26.4
 keras==2.14
+tensorflow-addons==0.23.0
 
