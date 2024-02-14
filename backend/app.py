@@ -1,5 +1,8 @@
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
+import logging
+
+logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
@@ -20,15 +23,20 @@ with open('model/class_names.csv', newline='') as csvfile:
     classes = list(csv.reader(csvfile))
 
 def classify_image(img_path):
-
+    app.logger.debug('\n\nprocessing new image')
     image = cv2.imread(img_path)
     image = cv2.resize(image, (64, 64))
     image = image.astype("float") / 255.0
     image = img_to_array(image)
     image = np.expand_dims(image, axis=0)
-    res = model.predict(image)
+    res = model.predict(image)[0]
+    
+    for i in range(0, len(res)):
+        app.logger.debug(f'{classes[i]}: {res[0]}')
 
-    pred_index = res.argmax(axis=-1)[0]
+    app.logger.debug(f'res_argmax: {res.argmax(axis=-1)}')
+    pred_index = res.argmax(axis=-1)
+    
     return classes[pred_index]
 
 @app.route('/upload', methods=['POST'])

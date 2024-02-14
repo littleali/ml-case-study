@@ -6,3 +6,4 @@ misc
 .keras
 __pycache__
 backend/*.jpg
+*.log
