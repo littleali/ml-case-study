@@ -15,4 +15,20 @@ P(B) = 1 – P(Not B) = 1 - 0.736806 = 0.263194
 ```
 # Task 2
 
+# Building the model
+To setup the environment for building model, you need to run `make dependency`
+- It will create a virtual env in .env if not exists
+- Source it
+- Install requirements
+
 You can find [Model Building Documentation here](IDClassification.ipynb) 
+
+# Running the app
+To run app you need to run `docker compose up` it will
+- Run frontend on `localhost:3000`
+- Run backend on `localhost:8000`
+
+
+# Testing
+To run tests for backend, you can run:
+- `python ba
